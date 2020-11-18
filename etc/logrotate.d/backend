@@ -1,0 +1,10 @@
+/ms/logs/*.log {
+  missingok
+  notifempty
+  copytruncate
+  dateext
+  dateyesterday
+  daily
+  rotate 7
+  compress
+}

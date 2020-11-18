@@ -1,0 +1,8 @@
+//The global script scope
+def ctx = context(scope: scriptScope())
+contributor(ctx) {
+  method(name: 'notifempty', type: 'Object', params: '', doc: 'Print Message')
+
+}
+
+// Errors on:

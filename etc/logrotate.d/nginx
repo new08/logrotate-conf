@@ -1,0 +1,15 @@
+/ms/nginx/logs/access.log /ms/nginx/logs/error.log {
+  missingok                # 即使未找到日志文件也不要出错
+  notifempty               # 如果日志文件为空，请勿旋转
+  copytruncate
+  dateext
+  dateyesterday
+  daily                    # 每天 4:00 a.m.
+  rotate 7                 # 最多旋转 7 次
+  compress                 # 压缩新文件
+  delaycompress            # 不要将最近的归档压缩，压缩将在下一次轮循周期进行
+  sharedscripts            # 匹配多处也只执行一次
+  postrotate
+      [ ! -f /ms/nginx/nginx.pid ] || kill -USR1 `cat /ms/nginx/nginx.pid`
+  endscript
+}

@@ -1,0 +1,10 @@
+/ms/tomcat/logs/catalina.out {
+  missingok
+  notifempty
+  copytruncate
+  dateext
+  dateyesterday
+  daily
+  rotate 7
+  compress
+}
